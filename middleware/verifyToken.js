@@ -1,16 +1,25 @@
+import Jwt from "jsonwebtoken";
+const secretKey = "vikash mishra";
 const verifyToken = (req,res,next)=>{
    
-    const bearerHeader = req.headers['authorization'];
+    let bearerHeader = req.headers['authorization'];
 
     try {
         if(typeof (bearerHeader)!=='undefined'){
         
 
-            const bearer= bearerHeader.split(" ");
+            let bearer= bearerHeader.split(" ");
             const token = bearer[1];
-            req.token = token;
+            Jwt.verify(token,secretKey,(err,success)=>{
+                if(err){
+                    return res.status(401).json({error:"invalid token"})
+                }
+                else{
+                    next()
+                }
+            })
            
-            next();
+           
         }
         else{
     
@@ -18,7 +27,7 @@ const verifyToken = (req,res,next)=>{
         }
         
     } catch (error) {
-        console.log(error.message,"error")
+        console.log(error.message)
         return res.json({error:"no token found"})
     }
 

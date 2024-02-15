@@ -26,7 +26,7 @@ app.listen(Port,()=>{
 const Connection = async(options)=>{
     try {
         
-        await mongoose.connect('mongodb+srv://collegebackend:1VCFU0C9vNsdJOlZ@clustor0.0cp1v9z.mongodb.net/?retryWrites=true&w=majority' ).then(
+        await mongoose.connect('mongodb+srv://collegebackend:0CDJ6jTqgevx2uDQ@clustor0.0cp1v9z.mongodb.net/?retryWrites=true&w=majority' ).then(
             console.log("Successfully connected to the database")
             )
            

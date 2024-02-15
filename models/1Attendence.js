@@ -1,23 +1,20 @@
 import mongoose from "mongoose";
 
-const studentSchema = new mongoose.Schema({
-  
+const Attendence1Schema = mongoose.Schema({
     Name:{
-        type:String,
-        required:true
-    },
-  
- 
-    Year:{
         type:String,
         required:true
     },
     Mobile:{
         type:String,
         required:true
-    }
- 
-    
-})
+    },
+    Status:{
+        type:String,
+        required:true
+    },
+},{
+    timestamps:true
+});
 
-export default mongoose.model('student',studentSchema);
+export default mongoose.model('firstAttendence',Attendence1Schema);

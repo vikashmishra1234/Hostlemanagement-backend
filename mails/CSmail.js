@@ -17,7 +17,7 @@ const sendEmail = async () => {
     const transporter = await nodemailer.createTransport({
       service: "gmail",
       host: "smtp.ethereal.email",
-      port: 587,
+      port: 587,      
       secure: false,
       auth: {
         // TODO: replace `user` and `pass` values from <https://forwardemail.net>
