@@ -1,3 +1,4 @@
+import Student from '../models/Student.js';
 import firstYear from '../models/1Attendence.js';
 import secondYear from '../models/2Attendece.js';
 import fourthYear from '../models/4Attendence.js';
@@ -8,6 +9,11 @@ import thirdYear from '../models/3Attendence.js';
 
     try {
 
+        const exist = await Student.findOne({Mobile:req.body.Phone})
+       
+        if(!exist){
+            return res.json({error:"Student Not Exist"})
+        }
         const first = await firstYear.findOne({Mobile:req.body.Phone,createdAt:{$gte:`${req.body.Date}`}})
         const second = await secondYear.findOne({Mobile:req.body.Phone,createdAt:{$gte:`${req.body.Date}`}})
         const third = await thirdYear.findOne({Mobile:req.body.Phone,createdAt:{$gte:`${req.body.Date}`}})
