@@ -29,7 +29,7 @@ const Router = express.Router();
 
 // ],addStudent);
 
-Router.post('/adminlogin',verifyToken,AdminLogin)
+Router.post('/adminlogin',AdminLogin)
 Router.post('/addstudent',verifyToken,addStudent)
 Router.get('/getstudent',verifyToken,getStudent)
 Router.post('/checkattendence',verifyToken,CheckAtten)
