@@ -1,6 +1,7 @@
 import express from 'express';
 import {body} from 'express-validator';
 import addStudent from '../user-controller/addStudent.js';
+import CheckAtten from '../user-controller/CheckAtten.js';
 import getStudent from '../user-controller/getStudent.js';
 import updateStudent from '../user-controller/updateStudent.js';
 import markAttendence1 from '../user-controller/markAttendence1.js';
@@ -31,6 +32,7 @@ const Router = express.Router();
 Router.post('/adminlogin',verifyToken,AdminLogin)
 Router.post('/addstudent',verifyToken,addStudent)
 Router.get('/getstudent',verifyToken,getStudent)
+Router.post('/checkattendence',verifyToken,CheckAtten)
 Router.post('/updatestudent',verifyToken,updateStudent)
 Router.post('/markattendece1',verifyToken,markAttendence1);
 Router.post('/markattendece2',verifyToken,markAttendence2);
