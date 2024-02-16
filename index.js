@@ -11,7 +11,7 @@ const app = express();
 const Port = 5000;
 
 app.use(cors({
-    origin:["https://hostle-management-frontend-bvwf.vercel.app/"],
+    origin:["https://hostle-management-frontend-bvwf.vercel.app"],
     methods:["POST","GET"],
     credentials:true
 }));
