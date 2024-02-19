@@ -13,7 +13,7 @@ app.use(
   cors({
     origin: ["https://hostle-management-frontend-bvwf.vercel.app"],
     methods: ["POST", "GET"],
-    credentials: true,
+    credentials: true
   })
 );
 
