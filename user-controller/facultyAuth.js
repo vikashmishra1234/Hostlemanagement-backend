@@ -5,14 +5,18 @@ import bcrypt, { genSalt } from "bcrypt";
 const secretKey = "vikash mishra";
 
 const FacultyLogin = async (req, res) => {
+  
   try {
     const user = await Admin.findOne({ userName: req.body.userName });
-    const exit = await bcrypt.compare(req.body.Password, user.Password);
-    if (!exit) {
-      return res.status.json({ error: "Password does not match" });
+    if (!user) {
+      return res.json({ error: "Invalid Name" });
+    }
+    const PassCom = await bcrypt.compare(req.body.Password, user.Password);
+    if (!PassCom) {
+      return res.json({ error: "Password does not match" });
     }
 
-    if (user && exit) {
+    if (user && PassCom) {
       const data = {
         id: user._id,
         username: user.userName,
