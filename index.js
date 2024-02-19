@@ -10,7 +10,6 @@ const app = express();
 
 const Port = 5000;
 
-app.use(cors());
 
 app.use(cors({
     origin:["https://hostle-management-frontend-bvwf.vercel.app"],
