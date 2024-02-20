@@ -8,6 +8,7 @@ import markAttendence1 from "../user-controller/markAttendence1.js";
 import markAttendence2 from "../user-controller/markAttendence2.js";
 import markAttendence3 from "../user-controller/markAttendence3.js";
 import markAttendence4 from "../user-controller/markAttendence4.js";
+import countStudent from "../user-controller/countStudent.js";
 
 import verifyToken from "../middleware/verifyToken.js";
 import AdminLogin from "../user-controller/facultyAuth.js";
@@ -23,5 +24,6 @@ Router.post("/markattendece1", verifyToken, markAttendence1);
 Router.post("/markattendece2", verifyToken, markAttendence2);
 Router.post("/markattendece3", verifyToken, markAttendence3);
 Router.post("/markattendece4", verifyToken, markAttendence4);
+Router.post("/studentnumber", verifyToken, countStudent);
 
 export default Router;
