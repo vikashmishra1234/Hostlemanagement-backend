@@ -24,6 +24,6 @@ Router.post("/markattendece1", verifyToken, markAttendence1);
 Router.post("/markattendece2", verifyToken, markAttendence2);
 Router.post("/markattendece3", verifyToken, markAttendence3);
 Router.post("/markattendece4", verifyToken, markAttendence4);
-Router.post("/studentnumber", verifyToken, countStudent);
+Router.get("/studentnumber", verifyToken, countStudent);
 
 export default Router;
